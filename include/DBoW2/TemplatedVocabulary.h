@@ -48,13 +48,13 @@ public:
    * Creates the vocabulary by loading a file
    * @param filename
    */
-  TemplatedVocabulary(const std::string &filename);
+  // TemplatedVocabulary(const std::string &filename);
   
   /**
    * Creates the vocabulary by loading a file
    * @param filename
    */
-  TemplatedVocabulary(const char *filename);
+  // TemplatedVocabulary(const char *filename);
   
   /** 
    * Copy constructor
@@ -253,20 +253,20 @@ public:
    * Saves the vocabulary into a file
    * @param filename
    */
-  void save(const std::string &filename) const;
+  // void save(const std::string &filename) const;
   
   /**
    * Loads the vocabulary from a file
    * @param filename
    */
-  void load(const std::string &filename);
+  // void load(const std::string &filename);
   
   /** 
    * Saves the vocabulary to a file storage structure
    * @param fn node in file storage
    */
-  virtual void save(cv::FileStorage &fs, 
-    const std::string &name = "vocabulary") const;
+  /* virtual void save(cv::FileStorage &fs, 
+    const std::string &name = "vocabulary") const; */
   
   /**
    * Loads the vocabulary from a file storage node
@@ -274,8 +274,8 @@ public:
    * @param subname name of the child node of fn where the tree is stored.
    *   If not given, the fn node is used instead
    */  
-  virtual void load(const cv::FileStorage &fs, 
-    const std::string &name = "vocabulary");
+  /* virtual void load(const cv::FileStorage &fs, 
+    const std::string &name = "vocabulary"); */
   
   /** 
    * Stops those words whose weight is below minWeight.
@@ -466,21 +466,21 @@ TemplatedVocabulary<TDescriptor,F>::TemplatedVocabulary
 
 // --------------------------------------------------------------------------
 
-template<class TDescriptor, class F>
+/* template<class TDescriptor, class F>
 TemplatedVocabulary<TDescriptor,F>::TemplatedVocabulary
   (const std::string &filename): m_scoring_object(NULL)
 {
   load(filename);
-}
+} */
 
 // --------------------------------------------------------------------------
 
-template<class TDescriptor, class F>
+/* template<class TDescriptor, class F>
 TemplatedVocabulary<TDescriptor,F>::TemplatedVocabulary
   (const char *filename): m_scoring_object(NULL)
 {
   load(filename);
-}
+} */
 
 // --------------------------------------------------------------------------
 
@@ -1660,29 +1660,29 @@ void TemplatedVocabulary<TDescriptor, F>::loadFromBinaryString(const std::string
 
 // --------------------------------------------------------------------------
 
-template<class TDescriptor, class F>
+/* template<class TDescriptor, class F>
 void TemplatedVocabulary<TDescriptor,F>::save(const std::string &filename) const
 {
   cv::FileStorage fs(filename.c_str(), cv::FileStorage::WRITE);
   if(!fs.isOpened()) throw std::string("Could not open file ") + filename;
   
   save(fs);
-}
+} */
 
 // --------------------------------------------------------------------------
 
-template<class TDescriptor, class F>
+/* template<class TDescriptor, class F>
 void TemplatedVocabulary<TDescriptor,F>::load(const std::string &filename)
 {
   cv::FileStorage fs(filename.c_str(), cv::FileStorage::READ);
   if(!fs.isOpened()) throw std::string("Could not open file ") + filename;
   
   this->load(fs);
-}
+} */
 
 // --------------------------------------------------------------------------
 
-template<class TDescriptor, class F>
+/* template<class TDescriptor, class F>
 void TemplatedVocabulary<TDescriptor,F>::save(cv::FileStorage &f,
   const std::string &name) const
 {
@@ -1775,11 +1775,11 @@ void TemplatedVocabulary<TDescriptor,F>::save(cv::FileStorage &f,
 
   f << "}";
 
-}
+} */
 
 // --------------------------------------------------------------------------
 
-template<class TDescriptor, class F>
+/* template<class TDescriptor, class F>
 void TemplatedVocabulary<TDescriptor,F>::load(const cv::FileStorage &fs,
   const std::string &name)
 {
@@ -1829,7 +1829,7 @@ void TemplatedVocabulary<TDescriptor,F>::load(const cv::FileStorage &fs,
     m_nodes[nid].word_id = wid;
     m_words[wid] = &m_nodes[nid];
   }
-}
+} */
 
 // --------------------------------------------------------------------------
 
@@ -1838,7 +1838,7 @@ void TemplatedVocabulary<TDescriptor,F>::load(const cv::FileStorage &fs,
  * @param os stream to write to
  * @param voc
  */
-template<class TDescriptor, class F>
+/* template<class TDescriptor, class F>
 std::ostream& operator<<(std::ostream &os, 
   const TemplatedVocabulary<TDescriptor,F> &voc)
 {
@@ -1868,7 +1868,7 @@ std::ostream& operator<<(std::ostream &os,
   os << ", Number of words = " << voc.size();
 
   return os;
-}
+} */
 
 } // namespace DBoW2
 
